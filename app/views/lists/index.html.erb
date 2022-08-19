@@ -1,5 +1,11 @@
 <h1>Lists</h1>
 <hr>
-<% @lists.each do |list| %>
-  <p><%= link_to list.name, list_path(list) %></p>
-<% end %>
+
+<div class="d-flex flex-row flex-wrap p-5 justify-content-around">
+  <% @lists.each do |list| %>
+    <div class="list-card">
+      <%= link_to list.name, list_path(list) %>
+      <%= cl_image_tag list.photo.key, height: 300, crop: :fill if list.photo.attached? %>
+    </div>
+  <% end %>
+</div>

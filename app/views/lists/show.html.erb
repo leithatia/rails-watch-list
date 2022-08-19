@@ -1,5 +1,6 @@
 <h1><%= @list.name %></h1>
 <%= link_to "New Bookmark", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+<%= link_to "Delete List", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
 
 <% @list.movies.each do |movie| %>
   <div class="card" style="width: 18rem;">
@@ -10,7 +11,7 @@
 
       <% bookmark = Bookmark.find_by(movie_id: movie.id) %>
       <p class="card-text"><strong>Comment: </strong><%= bookmark.comment %></p>
-      
+
       <a href="#" class="btn btn-primary">Delete </a>
     </div>
   </div>

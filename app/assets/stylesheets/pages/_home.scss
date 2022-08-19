@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+a {
+  text-decoration: none;
+}
+
+.list-card {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 200px;
+  padding: 50px;
+  background-size: cover;
+  box-shadow: 4px 4px 5px grey;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.list-card a {
+  color: aliceblue;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px black;
+}

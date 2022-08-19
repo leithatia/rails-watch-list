@@ -14,12 +14,19 @@ class ListsController < ApplicationController
   def create
     @list = List.create!(list_params)
     @list.save
-    redirect_to list_path(@list)
+    redirect_to lists_path
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.photo.purge
+    @list.destroy
+    redirect_to lists_path, status: :see_other
   end
 
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
