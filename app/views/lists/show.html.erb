@@ -8,10 +8,8 @@
     <div class="card-body">
       <h5 class="card-title"><%= movie.title %></h5>
       <p class="card-text"><strong>Overview: </strong><%= movie.overview %></p>
-
       <% bookmark = Bookmark.find_by(movie_id: movie.id) %>
       <p class="card-text"><strong>Comment: </strong><%= bookmark.comment %></p>
-
       <a href="#" class="btn btn-primary">Delete </a>
     </div>
   </div>
